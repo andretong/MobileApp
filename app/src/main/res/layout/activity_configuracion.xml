@@ -1,0 +1,126 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="econtact.org.myapp.ConfiguracionActivity"
+    android:background="@drawable/fondo_azul_inicio_chico">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/title_activity_configuracion"
+        android:id="@+id/lblConfiguracion"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblConfiguracion"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="52dp"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="70dp"
+                android:text="Servidor Nodos"
+                android:id="@+id/lblServContact" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/txtServContactCenter"
+                android:textIsSelectable="false"
+                android:text="@string/SERVIDOR_CONTACTCENTER" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="89dp"
+                android:layout_height="69dp"
+                android:text="Servidor Datos Cliente"
+                android:id="@+id/lblServDatos" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtServDatos"
+                android:textIsSelectable="false"
+                android:text="@string/SERVIDOR_DATOS"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Servidor C2C"
+                android:id="@+id/lblServidorC2C"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtServidorC2C"
+                android:textIsSelectable="false"
+                android:text="@string/SERVIDOR_C2C"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guardar"
+        android:id="@+id/btnConfiguracionGuardar"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMovil"
+        android:textIsSelectable="false"
+        android:layout_weight="1"
+        android:hint="9xxxxxxxx"
+        android:singleLine="true"
+        android:numeric="integer"
+        android:inputType="number"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignLeft="@+id/lblConfiguracion"
+        android:layout_alignStart="@+id/lblConfiguracion"
+        android:layout_alignRight="@+id/lblConfiguracion"
+        android:layout_alignEnd="@+id/lblConfiguracion" />
+
+    <TextView
+        android:layout_width="89dp"
+        android:layout_height="69dp"
+        android:text="@string/celular"
+        android:id="@+id/lblCelular"
+        android:layout_alignTop="@+id/txtMovil"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

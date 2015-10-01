@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="econtact.org.myapp" >
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="false" />
+
+    <uses-library android:name="com.google.android.maps" />
+    <uses-library android:name="com.google.gson" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".InicioActivity"
+            android:label="@string/title_activity_inicio" >
+        </activity>
+        <activity
+            android:name=".ChatGenesysActivity"
+            android:label="@string/title_activity_chat_genesys" >
+        </activity>
+        <activity
+            android:name=".ContactoActivity"
+            android:label="@string/title_activity_contacto" >
+        </activity>
+        <activity
+            android:name=".ConfiguracionActivity"
+            android:label="@string/title_activity_configuracion" >
+        </activity>
+        <activity
+            android:name=".AccionesActivity"
+            android:label="@string/title_activity_acciones" >
+        </activity>
+        <activity
+            android:name=".CallbackActivity"
+            android:label="@string/title_activity_callback" >
+        </activity>
+        <activity
+            android:name=".AgendamientosActivity"
+            android:label="@string/title_activity_agendamientos" >
+        </activity>
+        <activity
+            android:name=".ProductoActivity"
+            android:label="@string/title_activity_producto" >
+        </activity>
+    </application>
+
+</manifest>
