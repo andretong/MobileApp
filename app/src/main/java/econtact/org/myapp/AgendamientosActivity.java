@@ -39,12 +39,12 @@ public class AgendamientosActivity extends Activity implements View.OnClickListe
         String movil = Properties.MOVIL;
         Log.d("Agendamientos", "Consultando Agendamientos "+movil);
 
-        listaAgendamiento = ws_ivr.getAgendamientos(movil);
+//        listaAgendamiento = ws_ivr.getAgendamientos(movil);
 //        fono = (String) getIntent().getSerializableExtra("fono");
 
 
-//        WS_C2C_BEP ws_c2C_bep = new WS_C2C_BEP();
-//        listaAgendamiento = ws_c2C_bep.getAgendamientos(movil);
+        WS_C2C_BEP ws_c2C_bep = new WS_C2C_BEP();
+        listaAgendamiento = ws_c2C_bep.getAgendamientos(movil);
 
         if (listaAgendamiento != null){
             inicializar();
@@ -68,7 +68,7 @@ public class AgendamientosActivity extends Activity implements View.OnClickListe
             llp.setMargins(20, 0, 0, 0);
             tv1.setLayoutParams(llp);
             tv1.setText(convertirFecha(listaAgendamiento.getValue()[i].getStartDate().toString().trim()));
-            tv1.setTextColor(getResources().getColorStateList(R.color.primary_text_default_material_dark));
+//            tv1.setTextColor(getResources().getColorStateList(R.color.primary_dark_material_dark));
             ImageView imv = new ImageView(this);
             ImageView img = new ImageView(this);
             imv.setBackgroundResource(R.drawable.icono_producto_chico);

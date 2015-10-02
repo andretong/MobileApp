@@ -25,4 +25,7 @@
     <string name="title_activity_callback">CallbackActivity</string>
     <string name="title_activity_agendamientos">AgendamientosActivity</string>
     <string name="title_activity_producto">ProductoActivity</string>
+    <string name="title_activity_inicio_v2">Inicio_v2</string>
+    <string name="title_activity_inicio2">Inicio2Activity</string>
+    <string name="title_activity_menu_ivr">MenuIVRActivity</string>
 </resources>

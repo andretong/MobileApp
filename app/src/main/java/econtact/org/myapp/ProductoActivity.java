@@ -8,6 +8,7 @@ import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import econtact.org.android.TextviewMenu;
@@ -24,8 +25,8 @@ public class ProductoActivity extends Activity implements View.OnClickListener {
     private Context context = this;
     private TextView lblNumero, lblSaldo;
 
-    private Button btnAgendamientos, btnContacto, btnConfiguracion;
-
+    private Button btnContacto;
+    private ImageView imgProducto;
 
     private WS_IVR ivrws = new WS_IVR();
     private WS_eBank ebankClient = new WS_eBank();
@@ -47,14 +48,8 @@ public class ProductoActivity extends Activity implements View.OnClickListener {
         lblNumero = (TextView) findViewById(R.id.lblProducto);
         lblSaldo = (TextView) findViewById(R.id.lblSaldo);
 
-        btnAgendamientos = (Button) findViewById(R.id.button1);
-        btnAgendamientos.setOnClickListener(this);
-
         btnContacto = (Button) findViewById(R.id.button2);
         btnContacto.setOnClickListener(this);
-
-        btnConfiguracion = (Button) findViewById(R.id.button3);
-        btnConfiguracion.setOnClickListener(this);
 
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8)
@@ -71,12 +66,21 @@ public class ProductoActivity extends Activity implements View.OnClickListener {
         producto = (ClienteProducto) intent.getSerializableExtra("producto");
         lblNumero.setText(producto.getNumeroProducto());
         lblSaldo.setText(""+producto.getSaldo());
+
+//        if (producto.getTipoProducto() == 1){
+//            imgProducto.setImageResource(R.drawable.chart_1);
+//        }else if (producto.getTipoProducto() == 2){
+//            imgProducto.setImageResource(R.drawable.chart_2);
+//        }else if (producto.getTipoProducto() == 3){
+//            imgProducto.setImageResource(R.drawable.chart_1);
+//        }
     }
 
     @Override
     public void onClick(View v) {
+        Log.d("onClick_Producto", "Presiono "+v.toString());
         if (v instanceof Button){
-            if (v.getId() == R.id.btnContacto){
+            if (v.getId() == R.id.button2){
                 /*
                 Intent nextIntent = new Intent(this, ContactoActivity.class);
                 nextIntent.putExtra("rut", this.cliente.getRut());
@@ -108,14 +112,6 @@ public class ProductoActivity extends Activity implements View.OnClickListener {
                 intent.putExtra("optionID", optionID);
                 startActivity(intent);
 
-            }else if (v.getId() == R.id.btnConfiguracion){
-                Intent nextIntent = new Intent(this, ConfiguracionActivity.class);
-                startActivity(nextIntent);
-                //dialogConfiguration();
-            }else if (v.getId() == R.id.btnAgendamientos){
-                Intent nextIntent = new Intent(this, AgendamientosActivity.class);
-                startActivity(nextIntent);
-                //dialogConfiguration();
             }
 
         }else if (v instanceof TextviewMenu){

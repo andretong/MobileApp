@@ -65,6 +65,14 @@
             android:name=".ProductoActivity"
             android:label="@string/title_activity_producto" >
         </activity>
+        <activity
+            android:name=".Inicio_v2"
+            android:label="@string/title_activity_inicio_v2" >
+        </activity>
+        <activity
+            android:name=".MenuIVRActivity"
+            android:label="@string/title_activity_menu_ivr" >
+        </activity>
     </application>
 
 </manifest>

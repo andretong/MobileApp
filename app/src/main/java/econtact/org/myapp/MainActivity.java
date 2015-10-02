@@ -122,9 +122,15 @@ public class MainActivity extends Activity implements OnClickListener{
                 Util.alerta("Usuario y/o Clave incorrecta",
                         MainActivity.this);
             } else {
-                //Intent nextIntent = new Intent(this.getContext(),MainActivity.class);
-                Intent nextIntent = new Intent(this.getContext(), InicioActivity.class);
-				nextIntent.putExtra("rut", this.getRut());
+
+                //VERSION INICIAL
+//                Intent nextIntent = new Intent(this.getContext(), InicioActivity.class);
+//				nextIntent.putExtra("rut", this.getRut());
+//                startActivity(nextIntent);
+
+                //VERSION NUEVA
+                Intent nextIntent = new Intent(this.getContext(), Inicio_v2.class);
+                nextIntent.putExtra("rut", this.getRut());
                 startActivity(nextIntent);
 
             }
@@ -201,18 +207,18 @@ public class MainActivity extends Activity implements OnClickListener{
 
     }
 
-//    public void defaultConfiguration() {
-//
-//        EditText txtServidorContactCenter = (EditText) findViewById(R.id.txtServContactCenter);
-//        EditText txtServidorDatos = (EditText) findViewById(R.id.txtServDatos);
-//        EditText txtServidorC2C = (EditText) findViewById(R.id.txtServidorC2C);
-//
-//        Properties.SERVIDORBASE_NODOSMOVIL = txtServidorContactCenter.getText().toString();
-//        Properties.SERVIDORBASE_WS_EBANK = R.string.SERVIDOR_DATOS;
-//        Properties.SERVIDORBASE_WS_C2C = R.string.SERVIDOR_C2C;
+    public void defaultConfiguration() {
+
+        EditText txtServidorContactCenter = (EditText) findViewById(R.id.txtServContactCenter);
+        EditText txtServidorDatos = (EditText) findViewById(R.id.txtServDatos);
+        EditText txtServidorC2C = (EditText) findViewById(R.id.txtServidorC2C);
+
+        Properties.SERVIDORBASE_NODOSMOVIL = txtServidorContactCenter.getText().toString();
+        Properties.SERVIDORBASE_WS_EBANK = txtServidorDatos.getText().toString();
+        Properties.SERVIDORBASE_WS_C2C = txtServidorC2C.getText().toString();
 //        Properties.MOVIL = datosConfig[3];
-//
-//    }
+
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

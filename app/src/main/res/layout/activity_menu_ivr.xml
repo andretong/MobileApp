@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="econtact.org.myapp.MenuIVRActivity"
+    android:background="@drawable/fondo_azul_inicio_chico">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tab_despliegue_grande"
+        android:layout_alignBottom="@+id/lblMenu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout7"></LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:id="@+id/lblMenu"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEXTO_NOMBRE"
+        android:id="@+id/lblCliente"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/linearLayout7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tlMenuInicio"
+        android:layout_below="@+id/lblCliente"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="53dp"></TableLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="51dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAgendamientos"
+            android:background="@drawable/agendamientos"
+            android:layout_alignTop="@+id/btnContactCenter"
+            android:layout_toLeftOf="@+id/lblMenu"
+            android:layout_toStartOf="@+id/lblMenu"
+            android:layout_gravity="bottom" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnContactCenter"
+            android:background="@drawable/contacto"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/lblCliente"
+            android:layout_toEndOf="@+id/lblCliente"
+            android:layout_gravity="bottom" />
+    </LinearLayout>
+
+</RelativeLayout>

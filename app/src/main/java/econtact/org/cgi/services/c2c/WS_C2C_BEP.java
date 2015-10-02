@@ -207,9 +207,10 @@ public class WS_C2C_BEP {
 		//movil= "0"+movil;
 		try {
 
-			
+			String url = servidor+ "/getScheduleRequestByMobile?phoneNumber="+movil;
+			Log.d("Agendamientos", url);
 //			String resulPost = this.readUrlPost(Properties.getServidorNodosMovil()+ "/getScheduleRequestByMobile?phoneNumber="+movil, null);
-			String resulPost = conexion.performPostCall(servidor+ "/getScheduleRequestByMobile?phoneNumber="+movil, null);
+			String resulPost = conexion.performGetCall(url);
 			
 			if(!resulPost.equals("[]")){
 

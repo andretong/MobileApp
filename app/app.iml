@@ -91,12 +91,12 @@
     <orderEntry type="library" exported="" name="gson-2.3.1" level="project" />
     <orderEntry type="library" exported="" name="maps" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.2.1" level="project" />
-    <orderEntry type="library" exported="" name="effects" level="project" />
     <orderEntry type="library" exported="" name="usb" level="project" />
+    <orderEntry type="library" exported="" name="effects" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.2.1" level="project" />
-    <orderEntry type="library" exported="" name="afreechart-0.0.4" level="project" />
     <orderEntry type="library" exported="" name="commons-net-3.0.1" level="project" />
     <orderEntry type="library" exported="" name="achartengine-1.1.0-rc1" level="project" />
+    <orderEntry type="library" exported="" name="afreechart-0.0.4" level="project" />
   </component>
 </module>
