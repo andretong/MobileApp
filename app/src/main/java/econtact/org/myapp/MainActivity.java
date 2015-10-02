@@ -183,8 +183,14 @@ public class MainActivity extends Activity implements OnClickListener{
             Properties.SERVIDORBASE_WS_EBANK = datosConfig[1];
             Properties.SERVIDORBASE_WS_C2C = datosConfig[2];
             Properties.MOVIL = datosConfig[3];
-        } else
+        } else{
+            //CONFIGURABLE
             dialogConfiguration();
+
+            //DEFECTO
+
+        }
+
 
     }
 
@@ -194,6 +200,19 @@ public class MainActivity extends Activity implements OnClickListener{
         startActivityForResult(intent, MY_CUSTOM_DIALOG);
 
     }
+
+//    public void defaultConfiguration() {
+//
+//        EditText txtServidorContactCenter = (EditText) findViewById(R.id.txtServContactCenter);
+//        EditText txtServidorDatos = (EditText) findViewById(R.id.txtServDatos);
+//        EditText txtServidorC2C = (EditText) findViewById(R.id.txtServidorC2C);
+//
+//        Properties.SERVIDORBASE_NODOSMOVIL = txtServidorContactCenter.getText().toString();
+//        Properties.SERVIDORBASE_WS_EBANK = R.string.SERVIDOR_DATOS;
+//        Properties.SERVIDORBASE_WS_C2C = R.string.SERVIDOR_C2C;
+//        Properties.MOVIL = datosConfig[3];
+//
+//    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
