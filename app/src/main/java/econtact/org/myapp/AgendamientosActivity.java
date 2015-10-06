@@ -46,9 +46,9 @@ public class AgendamientosActivity extends Activity implements View.OnClickListe
         WS_C2C_BEP ws_c2C_bep = new WS_C2C_BEP();
         listaAgendamiento = ws_c2C_bep.getAgendamientos(movil);
 
-        if (listaAgendamiento != null){
+        if (listaAgendamiento.getValue() != null)
             inicializar();
-        }
+
 
     }
 

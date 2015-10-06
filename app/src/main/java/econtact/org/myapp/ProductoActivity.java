@@ -51,6 +51,19 @@ public class ProductoActivity extends Activity implements View.OnClickListener {
         btnContacto = (Button) findViewById(R.id.button2);
         btnContacto.setOnClickListener(this);
 
+        imgProducto = (ImageView) findViewById(R.id.imgProducto);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+
+            actions = (Actions) extras.getSerializable("actions");
+            //tree = (Tree) getIntent().getSerializableExtra("tree");
+            cliente = (Cliente) getIntent().getSerializableExtra("cliente");
+            fono = (String) getIntent().getSerializableExtra("fono");
+            opcion = (String) getIntent().getSerializableExtra("opcion");
+            optionID = (String) getIntent().getSerializableExtra("optionID");
+        }
+
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8)
         {
@@ -67,13 +80,13 @@ public class ProductoActivity extends Activity implements View.OnClickListener {
         lblNumero.setText(producto.getNumeroProducto());
         lblSaldo.setText(""+producto.getSaldo());
 
-//        if (producto.getTipoProducto() == 1){
-//            imgProducto.setImageResource(R.drawable.chart_1);
-//        }else if (producto.getTipoProducto() == 2){
-//            imgProducto.setImageResource(R.drawable.chart_2);
-//        }else if (producto.getTipoProducto() == 3){
-//            imgProducto.setImageResource(R.drawable.chart_1);
-//        }
+        if (producto.getTipoProducto() == 1){
+            imgProducto.setImageResource(R.drawable.chart_1);
+        }else if (producto.getTipoProducto() == 2){
+            imgProducto.setImageResource(R.drawable.chart_2);
+        }else if (producto.getTipoProducto() == 3){
+            imgProducto.setImageResource(R.drawable.chart_1);
+        }
     }
 
     @Override

@@ -72,6 +72,18 @@ public class MenuIVRActivity extends Activity implements View.OnClickListener {
 
         lblCliente = (TextView) findViewById(R.id.lblCliente);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+
+            actions = (Actions) extras.getSerializable("actions");
+            //tree = (Tree) getIntent().getSerializableExtra("tree");
+            cliente = (Cliente) getIntent().getSerializableExtra("cliente");
+            fono = (String) getIntent().getSerializableExtra("fono");
+            opcion = (String) getIntent().getSerializableExtra("opcion");
+            optionID = (String) getIntent().getSerializableExtra("optionID");
+        }
+
+
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8)
         {
@@ -90,7 +102,7 @@ public class MenuIVRActivity extends Activity implements View.OnClickListener {
         if (v instanceof Button){
             if (v.getId() == R.id.btnContactCenter){
 
-                actions = ivrws.getFono_v1(String.valueOf("11"));
+                actions = ivrws.getFono_v1(String.valueOf("10"));
 
                 if (actions != null){
                     ActionProperties[] aProperties = actions.getActions();
