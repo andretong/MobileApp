@@ -73,6 +73,10 @@
             android:name=".MenuIVRActivity"
             android:label="@string/title_activity_menu_ivr" >
         </activity>
+        <activity
+            android:name=".ChatInteractiveActivity"
+            android:label="@string/title_activity_chat_interactive" >
+        </activity>
     </application>
 
 </manifest>

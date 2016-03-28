@@ -31,11 +31,12 @@ public class ChatGenesysActivity extends Activity implements View.OnClickListene
         cliente = (Cliente) getIntent().getSerializableExtra("cliente");
         Log.d("CHAT", "Cliente "+cliente.getNombre()+" "+cliente.getCorreo());
 
-        String url = "http://chat-gsys.e-contact.cl/eservicesweb/chat/HtmlChatFrameSet.jsp?RoutingData=&AdditionalData=";
-//        String url = "http://g1aux001.e-contact.cl:8080/eservicesweb/chat/HtmlChatFrameSet.jsp?RoutingData=&AdditionalData=";
-//        String url = "http://10.33.16.22:8080/eservicesweb/chat/HtmlChatFrameSet.jsp?RoutingData=&AdditionalData=";
-        //url += "EmailAddress;JOSEALVAREZ%40correo.com;FirstName;JOSE;LastName;ALVAREZ";
-        url += "EmailAddress;"+cliente.getCorreo().replace("@", "%40")+";FirstName;"+cliente.getNombre()+";LastName;"+cliente.getApellido()+";RUT;"+cliente.getRut()+";Cliente;eBank";
+        //CHAT INTERACTIVE
+        String url = "http://10.33.16.35/i3root/";
+
+        //CHAT GENESYS
+//        String url = "http://chat-gsys.e-contact.cl/eservicesweb/chat/HtmlChatFrameSet.jsp?RoutingData=&AdditionalData=";
+//        url += "EmailAddress;"+cliente.getCorreo().replace("@", "%40")+";FirstName;"+cliente.getNombre()+";LastName;"+cliente.getApellido()+";RUT;"+cliente.getRut()+";Cliente;eBank";
 
         Log.d("ChatGenesys", "URL "+url);
         //url += "mobile="+attachData.get(2)+"&firstName="+nombre+"&lastName="+apellido;

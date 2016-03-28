@@ -102,7 +102,10 @@ public class MenuIVRActivity extends Activity implements View.OnClickListener {
         if (v instanceof Button){
             if (v.getId() == R.id.btnContactCenter){
 
-                actions = ivrws.getFono_v1(String.valueOf("10"));
+                if (cliente.getTipo_cliente() == 2 )
+                    actions = ivrws.getFono_v1(String.valueOf("10"));
+                else
+                    actions = ivrws.getFono_v1(String.valueOf("13"));
 
                 if (actions != null){
                     ActionProperties[] aProperties = actions.getActions();

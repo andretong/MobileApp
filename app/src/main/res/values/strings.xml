@@ -28,4 +28,5 @@
     <string name="title_activity_inicio_v2">Inicio_v2</string>
     <string name="title_activity_inicio2">Inicio2Activity</string>
     <string name="title_activity_menu_ivr">MenuIVRActivity</string>
+    <string name="title_activity_chat_interactive">ChatInteractiveActivity</string>
 </resources>

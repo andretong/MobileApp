@@ -146,7 +146,10 @@ public class Inicio_v2 extends Activity implements View.OnClickListener {
                 startActivity(nextIntent);
                 */
 
-                actions = ivrws.getFono_v1(String.valueOf("10"));
+                if (cliente.getTipo_cliente() == 2 )
+                    actions = ivrws.getFono_v1(String.valueOf("10"));
+                else
+                    actions = ivrws.getFono_v1(String.valueOf("13"));
 
                 if (actions != null){
                     ActionProperties[] aProperties = actions.getActions();

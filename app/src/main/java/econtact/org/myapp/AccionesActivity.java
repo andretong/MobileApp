@@ -16,6 +16,11 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 import econtact.org.android.TextviewMenu;
@@ -184,21 +189,13 @@ public class AccionesActivity extends Activity implements View.OnClickListener {
         }
 
         if (tipoAccion.equals("CHAT")) {
-            /*
-            datos.add(aProperties.getUrl());
 
-            Intent intent = new Intent(this, ChatGenesysActivity.class);
-            intent.putExtra("attachData", datos);
-            intent.putExtra("optionID", optionID);
-            intent.putExtra("actionID", actionID);
-            //startActivity(intent);
-            startActivityForResult(intent, CHAT_RESULT_FROM_DIALOG);
-            */
-
+            //GENESYS
             Intent nextIntent = new Intent(this, ChatGenesysActivity.class);
-            //nextIntent.putExtra("rut", this.cliente.getRut());
-            //nextIntent.putExtra("nombre", this.cliente.getNombre());
-            //nextIntent.putExtra("apellido", this.cliente.getApellido());
+
+            //INTERACTIVE
+            //Intent nextIntent = new Intent(this, ChatInteractiveActivity.class);
+
             nextIntent.putExtra("cliente", this.cliente);
             startActivity(nextIntent);
             finish();
@@ -214,7 +211,8 @@ public class AccionesActivity extends Activity implements View.OnClickListener {
             //FORMA DEPRECATED
             //DoVirtualHold resultado = ws_c2C_bep.doVirtualHold("0"+Properties.MOVIL, cola, datos);
 
-            //CON PERFORMPOSTCALL
+            /*
+            //CON PERFORMPOSTCALL -- GENESYS
             DoVirtualHold resultado = ws_c2c_bep.doVirtualHold("0"+Properties.MOVIL, cola, datos);
 
             if(resultado.getErrCode().equals("0")){
@@ -222,6 +220,28 @@ public class AccionesActivity extends Activity implements View.OnClickListener {
                 finish();
             }else{
                 Toast.makeText(getApplicationContext(), "La llamada no puede ser agendada, intente nuevamente.", Toast.LENGTH_SHORT).show();
+            }
+            */
+
+            //INTERACTIVE
+            //String url = "http://i3-web-001/I3Root/Server1/websvcs/callback/create";
+            String url = "http://10.33.16.35/I3Root/Server1/websvcs/callback/create";
+            String resultado = ws_c2c_bep.doVirtualHold_CIC(url, cliente);
+            Log.d("AccionesActivity", "Resultado Virtual Hold CIC:" + resultado);
+
+            try {
+                JSONObject jsonObj = new JSONObject(resultado);
+                JSONObject status = jsonObj.getJSONObject("callback").getJSONObject("status");
+
+                if(status.getString("type").equals("success")){
+                    Toast.makeText(getApplicationContext(), "Se ha agendado la llamada, nuestros agentes lo van a contactar a la brevedad.", Toast.LENGTH_SHORT).show();
+                    finish();
+                }else{
+                    Toast.makeText(getApplicationContext(), "La llamada no puede ser agendada, intente nuevamente.", Toast.LENGTH_SHORT).show();
+                }
+
+            } catch (JSONException e) {
+                Log.d("JSONException", e.getLocalizedMessage());
             }
 
         }
